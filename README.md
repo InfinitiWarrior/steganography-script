@@ -24,13 +24,13 @@ To make the script easily executable from any location, you can add it to your s
 
    You need to place the script in a directory that is included in your system's PATH environment variable. Common directories for user scripts are `/usr/local/bin` or `~/bin`.
 
-   To move `steganography.sh` to `/usr/local/bin`, use:
+   To move `steganography` to `/usr/local/bin`, use:
 
-   `sudo mv steganography.sh /usr/local/bin/`
+   `sudo mv steganography /usr/local/bin/`
 
    Make sure to give it execute permissions:
 
-   `sudo chmod +x /usr/local/bin/steganography.sh`
+   `sudo chmod +x /usr/local/bin/steganography`
 
    If you prefer to use `~/bin`, first create the directory if it doesn't exist:
 
@@ -38,7 +38,7 @@ To make the script easily executable from any location, you can add it to your s
 
    Then move the script there:
 
-   `mv steganography.sh ~/bin/`
+   `mv steganography ~/bin/`
 
    Ensure `~/bin` is in your PATH. Add this line to your `.bashrc`, `.zshrc`, or equivalent configuration file:
 
@@ -52,7 +52,7 @@ To make the script easily executable from any location, you can add it to your s
 
    You should now be able to run the script from anywhere by typing:
 
-   `steganography.sh`
+   `steganography`
 
 ## Script Overview
 
@@ -79,11 +79,11 @@ The script provides two main functionalities:
 
 To embed a message into the metadata of a file, use the `embed` command. Here’s the syntax:
 
-`steganography.sh embed -f <file> -m "<message>" [-o <output>]`
+`steganography embed -f <file> -m "<message>" [-o <output>]`
 
 **Example:**
 
-`steganography.sh embed -f image.jpg -m "This is a hidden message" -o output.jpg`
+`steganography embed -f image.jpg -m "This is a hidden message" -o output.jpg`
 
 In this example:
 - `image.jpg` is the target file.
@@ -94,11 +94,11 @@ In this example:
 
 To extract a hidden message from the metadata of a file, use the `extract` command. Here’s the syntax:
 
-`steganography.sh extract -f <file>`
+`steganography extract -f <file>`
 
 **Example:**
 
-`steganography.sh extract -f image.jpg`
+`steganography extract -f image.jpg`
 
 In this example:
 - `image.jpg` is the file from which to extract the hidden message.
@@ -107,17 +107,17 @@ In this example:
 
 To display the help message:
 
-`steganography.sh -h`
+`steganography -h`
 
 To display the script version:
 
-`steganography.sh -v`
+`steganography -v`
 
 ## Script Details
 
-**Script File**: `steganography.sh`
+**Script File**: `steganography`
 
-**Version**: 1.0
+**Version**: 1.1
 
 **Author**: Daniel
 
