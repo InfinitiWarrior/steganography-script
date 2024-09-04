@@ -16,6 +16,44 @@ If you're using Homebrew, install `ExifTool` with:
 
 `brew install exiftool`
 
+## Adding the Script to PATH
+
+To make the script easily executable from any location, you can add it to your system's PATH.
+
+1. **Move the Script to a Directory in PATH**
+
+   You need to place the script in a directory that is included in your system's PATH environment variable. Common directories for user scripts are `/usr/local/bin` or `~/bin`.
+
+   To move `steganography.sh` to `/usr/local/bin`, use:
+
+   `sudo mv steganography.sh /usr/local/bin/`
+
+   Make sure to give it execute permissions:
+
+   `sudo chmod +x /usr/local/bin/steganography.sh`
+
+   If you prefer to use `~/bin`, first create the directory if it doesn't exist:
+
+   `mkdir -p ~/bin`
+
+   Then move the script there:
+
+   `mv steganography.sh ~/bin/`
+
+   Ensure `~/bin` is in your PATH. Add this line to your `.bashrc`, `.zshrc`, or equivalent configuration file:
+
+   `export PATH="$HOME/bin:$PATH"`
+
+   After editing, reload the configuration file:
+
+   `source ~/.bashrc` or `source ~/.zshrc`
+
+2. **Verify the Script is Accessible**
+
+   You should now be able to run the script from anywhere by typing:
+
+   `steganography.sh`
+
 ## Script Overview
 
 The script provides two main functionalities:
@@ -41,11 +79,11 @@ The script provides two main functionalities:
 
 To embed a message into the metadata of a file, use the `embed` command. Here’s the syntax:
 
-`./steg_tool.sh embed -f <file> -m "<message>" [-o <output>]`
+`steganography.sh embed -f <file> -m "<message>" [-o <output>]`
 
 **Example:**
 
-`./steg_tool.sh embed -f image.jpg -m "This is a hidden message" -o output.jpg`
+`steganography.sh embed -f image.jpg -m "This is a hidden message" -o output.jpg`
 
 In this example:
 - `image.jpg` is the target file.
@@ -56,11 +94,11 @@ In this example:
 
 To extract a hidden message from the metadata of a file, use the `extract` command. Here’s the syntax:
 
-`./steg_tool.sh extract -f <file>`
+`steganography.sh extract -f <file>`
 
 **Example:**
 
-`./steg_tool.sh extract -f image.jpg`
+`steganography.sh extract -f image.jpg`
 
 In this example:
 - `image.jpg` is the file from which to extract the hidden message.
@@ -69,21 +107,19 @@ In this example:
 
 To display the help message:
 
-`./steg_tool.sh -h`
+`steganography.sh -h`
 
 To display the script version:
 
-`./steg_tool.sh -v`
+`steganography.sh -v`
 
 ## Script Details
 
-**Script File**: `steg_tool.sh`
+**Script File**: `steganography.sh`
 
 **Version**: 1.0
 
-**Author**: [Your Name]
-
-**License**: MIT License
+**Author**: Daniel
 
 ## Additional Information
 
