@@ -19,6 +19,22 @@ embed_message_exif() {
     echo "Message embedded Successfully in $file"
 
 }
+
+# Function to extract a message from file metadata
+extract_message_exif() {
+    local file=$1
+
+    # Check if the file exists
+    if [[ ! -f "$file" ]]; then
+        echo "File not found!"
+        exit 1
+    fi
+
+    # Extract the message from the file metadata
+    exiftool -Comment "$file"
+}
+
+
 # Check for required arguments
 if [[ $# -lt 2 ]]; then
     echo "Usage: $0 [embed|extract] [file] [message (for embed)]"
